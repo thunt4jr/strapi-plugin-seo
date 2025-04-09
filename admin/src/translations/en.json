@@ -106,5 +106,24 @@
     "Improvements": "Improvements",
     "Bad": "Bad",
     "Social-preview.alert": "Complete your social component to see the preview",
-    "Information": "Information"
+    "Information": "Information",
+
+    "SEO.input.metaRobots.placeholder": "Select robots directives",
+    "SEO.input.metaViewport.placeholder": "Select viewport settings",
+    "SEO.metaRobots.label": "Meta Robots",
+    "SEO.metaRobots.description": "Choose robot directives to control how search engines interact with your page",
+    "SEO.metaViewport.label": "Meta Viewport",
+    "SEO.metaViewport.description": "Choose viewport settings for responsive behavior",
+    "SEO.metaRobots.option.noindex_nofollow": "No Index, No Follow",
+    "SEO.metaRobots.option.noindex_follow": "No Index, Follow",
+    "SEO.metaRobots.option.index_nofollow": "Index, No Follow",
+    "SEO.metaRobots.option.index_follow": "Index, Follow",
+    "SEO.metaRobots.option.noarchive": "No Archive",
+    "SEO.metaRobots.option.nosnippet": "No Snippet",
+    "SEO.metaRobots.option.noimageindex": "No Image Index",
+    "SEO.metaRobots.option.nositelinkssearchbox": "No Sitelinks Search Box",
+    "SEO.metaViewport.option.default": "Responsive (Default)",
+    "SEO.metaViewport.option.max_scale": "Responsive with Maximum Scale",
+    "SEO.metaViewport.option.no_user_scale": "Responsive without User Scaling",
+    "SEO.metaViewport.option.no_shrink": "Responsive with No Shrinking"
 }

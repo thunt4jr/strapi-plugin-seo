@@ -4,6 +4,7 @@ import pluginPkg from '../../package.json';
 import { Initializer } from './components/Initializer';
 import { SeoChecker } from './components/CMEditView/RightLinksCompo';
 import { pluginPermissions } from './permissions';
+import registerCustomFields from './customFields';
 
 import { pluginId } from './pluginId';
 import { prefixPluginTranslations } from './utils/prefixPluginTranslations';
@@ -29,7 +30,9 @@ export default {
       name,
     });
   },
-  bootstrap(app) {
+  bootstrap(app) {    
+    registerCustomFields({ strapi: app });
+    
     app.getPlugin('content-manager').injectComponent('editView', 'right-links', {
       name: 'SeoChecker',
       Component: SeoChecker,

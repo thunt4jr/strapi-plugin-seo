@@ -4,7 +4,6 @@ import { useIntl } from 'react-intl';
 import isEqual from 'lodash/isEqual';
 import isNull from 'lodash/isNull';
 import isEmpty from 'lodash/isEmpty';
-import get from 'lodash/get';
 
 import { Box, Status, Flex, Typography } from '@strapi/design-system';
 import { CheckCircle, WarningCircle } from '@strapi/icons';
@@ -59,7 +58,7 @@ export const MetaRobotCheck = ({ metaRobots, checks }) => {
         qualityVerdict: qualityVerdict.good,
       };
     } else {
-      setTags(metaRobots.split(','));
+      setTags(metaRobots.split ? metaRobots.split(',') : [metaRobots]);
     }
     if (!isEqual(status, checks.metaRobots))
       dispatch({
@@ -84,14 +83,14 @@ export const MetaRobotCheck = ({ metaRobots, checks }) => {
         <Box padding={2} background="neutral100">
           {robotTags.map((tag, index) => (
             <Flex spacing={2} key={index} horizontal padding={2}>
-              {tags.find((x) => x.trim() === tag.name) ? (
+              {tags.some(x => (x.trim ? x.trim() : x) === tag.name) ? (
                 <CheckCircle aria-hidden={true} fill={`success600`} />
               ) : (
                 <WarningCircle aria-hidden={true} fill={`warning600`} />
               )}
 
               <Typography paddingLeft={1}>
-                {tags.find((x) => x.trim() === tag.name)
+                {tags.some(x => (x.trim ? x.trim() : x) === tag.name)
                   ? `${tag.name} is activated:
           ${tag.message.replace('will', 'will not')}`
                   : `${tag.name} is disabled: ${tag.message}`}

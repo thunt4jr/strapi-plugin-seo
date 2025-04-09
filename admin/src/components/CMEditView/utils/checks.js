@@ -190,7 +190,13 @@ export const metaRobotPreview = (modifiedData) => {
       message: '',
       qualityVerdict: qualityVerdict.good,
     };
+  } else if (metaRobots.includes('noindex')) {
+    status = {
+      message: '',
+      qualityVerdict: qualityVerdict.improvements,
+    };
   }
+  
   return status;
 };
 
@@ -229,5 +235,27 @@ export const structuredDataPreview = (modifiedData) => {
       qualityVerdict: qualityVerdict.bad,
     };
   }
+  return status;
+};
+
+export const metaViewportPreview = (modifiedData) => {
+  const metaViewport = get(modifiedData, 'seo.metaViewport');
+  let status = {
+    message: '',
+    qualityVerdict: qualityVerdict.good,
+  };
+  
+  if (isNull(metaViewport) || isEmpty(metaViewport)) {
+    status = {
+      message: '',
+      qualityVerdict: qualityVerdict.good,
+    };
+  } else if (metaViewport.includes('user-scalable=no')) {
+    status = {
+      message: '',
+      qualityVerdict: qualityVerdict.improvements,
+    };
+  }
+  
   return status;
 };

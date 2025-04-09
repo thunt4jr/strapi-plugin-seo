@@ -35,11 +35,26 @@
       "regex": "[^,]+"
     },
     "metaRobots": {
-      "type": "string",
-      "regex": "[^,]+"
+      "type": "enumeration",
+      "enum": [
+        "noindex, nofollow",
+        "noindex, follow",
+        "index, nofollow",
+        "index, follow",
+        "noarchive",
+        "nosnippet",
+        "noimageindex",
+        "nositelinkssearchbox"
+      ]
     },
     "metaViewport": {
-      "type": "string"
+      "type": "enumeration",
+      "enum": [
+        "width=device-width, initial-scale=1",
+        "width=device-width, initial-scale=1, maximum-scale=1",
+        "width=device-width, initial-scale=1, user-scalable=no",
+        "width=device-width, initial-scale=1, shrink-to-fit=no"
+      ]
     },
     "canonicalURL": {
       "type": "string"
